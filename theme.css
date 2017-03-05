@@ -1,0 +1,28 @@
+.theme-primary {
+    background-color: #123456;
+}
+
+.theme-secondary {
+    background-color: #897456;
+
+}
+
+.theme-tertiary {
+    background-color: #90F456;
+
+}
+
+.theme-text-primary {
+    color: #FFF;
+
+}
+
+.theme-text-secondary {
+    color: #123456;
+
+}
+
+.theme-text-tertiary {
+    color: #404040;
+
+}
