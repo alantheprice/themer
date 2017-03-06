@@ -5,16 +5,15 @@
     Themer.DEFAULT_LINK_URL = "./theme.css";
 
     Themer.DEFAULTS = {
-        primary: "#123456",
-        secondary: "#897456",
-        tertiary: "#897456",
-        "text-primary": "#222222",
-        "text-secondary": "#777777",
-        "text-tertiary": "#782290"
+        primary: "#7D839B",
+        secondary: "#C8CAD1",
+        tertiary: "#72928C",
+        "text-primary": "#302E44",
+        "text-secondary": "#221E3F",
+        "text-tertiary": "#E1D0BD"
     };
 
     function Themer() {
-
     }
 
     Themer.prototype.addDefaultTheme = function () {
@@ -47,7 +46,7 @@
         return keys.map((key) => {
             let value = theme[key];
             let themeName = "theme-" + key;
-            let propName = (key.indexOf("text") === -1) ? "color" : "background-color";
+            let propName = (key.indexOf("text") === -1) ? "background-color" : "color";
             let finalVal = [propName, value].join(": ");
             return [".", themeName, " {", finalVal, "}"].join(""); 
         }).join("\n");
@@ -87,17 +86,46 @@
     });
 
     function setupEvents() {
-        let primary = global.document.getElementById("primary");
-        let secondary = global.document.getElementById("secondary");
-        let tertiary = global.document.getElementById("tertiary");
-        let textPrimary = global.document.getElementById("text-primary");
-        let textSecondary = global.document.getElementById("text-secondary");
-        let textTertiary = global.document.getElementById("text-tertiary");
+        setInputValues();
+        let [primary, secondary, tertiary] = getElements(["primary", "secondary", "tertiary"]);
+        let [textPrimary, textSecondary, textTertiary] = getElements(["text-primary", "text-secondary", "text-tertiary"]);
 
         global.document.getElementById("save-button").addEventListener("click", () => {
-            //TODO: save new colors
+            console.log("save clicked");
+            let theme = getThemeFromInput();
+            let themer = new Themer();
+            themer.setTheme(theme);
         });
 
+        global.document.getElementById("clear-button").addEventListener("click", () => {
+            console.log("clear clicked");
+            global.localStorage.setItem(Themer.THEME_KEY, null);
+            new Themer().addDefaultTheme();
+        });
+
+    }
+
+    function getElements(elementIds) {
+        return elementIds.map((elementId) => {
+             return global.document.getElementById(elementId);
+        });
+    }
+
+    function setInputValues() {
+        let themer = new Themer();
+        let currentTheme = themer.getTheme() || {};
+        Object.keys(Themer.DEFAULTS).forEach((key) => {
+            let element = global.document.getElementById(key);
+            element.value = currentTheme[key] || Themer.DEFAULTS[key];
+        });
+    }
+
+    function getThemeFromInput() {
+        return Object.keys(Themer.DEFAULTS).reduce((agg, key) => {
+            let element = global.document.getElementById(key);
+            agg[key] = element.value || Themer.DEFAULTS[key];
+            return agg;
+        }, {});
     }
 
 

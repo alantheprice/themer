@@ -1,1 +1,38 @@
 /* A bunch of different styles here, will be loaded before the themes */
+
+.full {
+    margin: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.header {
+    margin: 0;
+    padding: 10px;
+    line-height: 60px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.content {
+    margin: 20px;
+}
+
+input {
+    line-height: 18px;
+    padding: 6px;
+    margin: 7px 0;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 7px;
+}
+
+button {
+    line-height: 18px;
+    margin: 10px;
+    padding: 10px;
+    font-size: 14px;
+}

@@ -1,28 +1,23 @@
 .theme-primary {
-    background-color: #123456;
+    background-color: #7D839B;
 }
 
 .theme-secondary {
-    background-color: #897456;
-
+    background-color: #C8CAD1;
 }
 
 .theme-tertiary {
-    background-color: #90F456;
-
+    background-color: #72928C;
 }
 
 .theme-text-primary {
-    color: #FFF;
-
+    color: #302E44;
 }
 
 .theme-text-secondary {
-    color: #123456;
-
+    color: #221E3F;
 }
 
 .theme-text-tertiary {
-    color: #404040;
-
+    color: #E1D0BD;
 }
