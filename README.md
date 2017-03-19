@@ -13,8 +13,11 @@
 
 Quick start of the prototype: 
 
-In terminal/bash, enter: *NOTE: nodeJS must be installed.
-//-----------
+Dependencies: [nodejs](https://nodejs.org/)
+
+In terminal/bash, enter:
+
+-----------
 ```
 cd ~
 mkdir quickTesting; cd quickTesting
