@@ -1,7 +1,5 @@
 # A Prototype theme switcher.
-### Designed simply to show a pattern for theming a site using css without inline scripts or inline styles.
-
-* Simply a prototype to demonstrate a pattern, not a fully fleshed out project.
+### Designed simply to show a pattern for theming a site using css without inline scripts or inline styles.  Simply a prototype to demonstrate a pattern, not a fully fleshed out project.
 
 #### Design: 
 
